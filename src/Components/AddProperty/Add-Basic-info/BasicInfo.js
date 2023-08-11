@@ -30,15 +30,15 @@ export default function BasicInfo() {
                             <option>FarmHouse</option>
                             <option>Penthouse</option>
                         </select>
-                        <label>Negotable</label>
+                        <label>Price</label>
+                        <input type="number" />
+                    </div>
+                    <div>
+                    <label>Negotable</label>
                         <select>
                             <option>yes</option>
                             <option>no</option>
                         </select>
-                    </div>
-                    <div>
-                        <label>Price</label>
-                        <input type="number" />
 
                         <label>Ownership</label>
                         <select>
