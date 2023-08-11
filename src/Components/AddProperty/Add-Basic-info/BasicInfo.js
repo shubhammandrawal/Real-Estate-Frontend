@@ -13,9 +13,9 @@ export default function BasicInfo() {
         <h3>ADD NEW PROPERTY</h3>
         <div className='property-navbar'>
             <ol>
-                <li>Basic Info</li>
-                <li onClick={() => navigate('/generalInfo')}>Property Detail</li>
-                <li onClick={() => navigate('/propertydetails')}>General Info</li>
+                <li onClick={() => navigate('/basicinfo')}>Basic Info</li>
+                <li onClick={() => navigate('/propertydetails')}>Property Detail</li>
+                <li onClick={() => navigate('/generalInfo')}>General Info</li>
                 <li onClick={() => navigate('/locationInfo')}>Location Info</li>
             </ol>
         </div>
