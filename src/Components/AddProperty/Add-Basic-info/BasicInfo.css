@@ -13,7 +13,8 @@ h3{
 
 .property-navbar ol{
     width: 60%;
-    list-style-type: none;
+    list-style: none;
+    padding-left: 0;
     display: flex;
     justify-content: space-between;
     border-radius: 25px;
@@ -26,13 +27,26 @@ h3{
 .property-navbar ol li{
     color: #7D7D7D;
     margin: auto 0;
-    padding: 15px;
     cursor: pointer;
+    padding-left: 0;
 }
 
 .property-navbar ol li:hover{
     background-color:aliceblue;
     border-radius: 15px;
+}
+
+.property-navbar ol .selected{
+    background-color:rgb(9, 78, 138);
+    color: #FFFFFF;
+    border-radius: 25px;
+
+}
+
+.property-navbar ol .selected:hover{
+    background-color:rgb(9, 78, 138);
+    color: #FFFFFF;
+    border-radius: 25px;
 }
 
 .form-container{
@@ -55,7 +69,6 @@ h3{
 
 .form-container .field-container div{
     width: 40%;
-
 }
 
 
@@ -76,4 +89,45 @@ h3{
 }
 
 
+.form-container .btn{
+    margin-left: 40%;
+}
 
+.btn button{
+    padding: 8px 14px;
+    border-radius: 25px;
+    border: none;
+    font-family: sans-serif;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.btn button:first-child{
+    background-color: #5dadf9;
+    margin-right: 15px;
+}
+
+.btn button:last-child{
+    background-color: #053c6e;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .property-navbar ol{
+        width: 80%;
+    }
+
+    .property-navbar ol li{
+        /* width: 80%; */
+        margin-left: -20px;
+    }
+    
+    .form-container .btn{
+        margin-left: 10%;
+    }
+    
+    .form-container div{
+        width: 100%;
+    }
+}
