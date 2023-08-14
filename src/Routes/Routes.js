@@ -8,7 +8,7 @@ export default function Router(){
     return<>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<BasicInfo />} />
+      <Route path='/basicinfo' element={<BasicInfo />} />
       <Route path='/propertydetails' element={<PropertyDetails />} />
       <Route path='/generalinfo' element={<GeneralInfo />} />
       <Route path='/locationinfo' element={<LocationInfo />} />
