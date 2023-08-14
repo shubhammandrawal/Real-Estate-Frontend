@@ -7,7 +7,14 @@ export default function LocationInfo() {
     const navigate = useNavigate()
 
     const [data, setData] = useState({
-
+        email: "",
+        city: "",
+        area: "",
+        pincode: "",
+        address: "",
+        landmark: "",
+        latitude: "",
+        longitude: ""
     })
 
     const submitHandler = (e) => {
@@ -29,9 +36,17 @@ export default function LocationInfo() {
                 <div className='field-container'>
                     <div>
                         <label>Email</label>
-                        <input type="email" />
+                        <input type="email" onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, email: e.target.value }
+                            })
+                        }} value={data.email} required />
                         <label>City</label>
-                        <select>
+                        <select onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, city: e.target.value }
+                            })
+                        }} value={data.city}>
                             <option>Mumbai</option>
                             <option>Bangalore</option>
                             <option>Pune</option>
@@ -42,27 +57,51 @@ export default function LocationInfo() {
                     </div>
                     <div>
                         <label>Area</label>
-                        <input type="text" />
+                        <input type="text" onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, area: e.target.value }
+                            })
+                        }} value={data.area} required />
 
                         <label>Pincode</label>
-                        <input type="number" />
+                        <input type="number" onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, pincode: e.target.value }
+                            })
+                        }} value={data.pincode} required />
                     </div>
                     <div>
                         <label>Address</label>
-                        <input type="text" />
+                        <input type="text" onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, address: e.target.value }
+                            })
+                        }} value={data.address} required />
                         <label>Landmark</label>
-                        <input type="text" />
+                        <input type="text" onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, landmark: e.target.value }
+                            })
+                        }} value={data.landmark} required />
                     </div>
                     <div>
                         <label>Latitude</label>
-                        <input type="text" />
+                        <input type="text" onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, latitude: e.target.value }
+                            })
+                        }} value={data.latitude} required />
                         <label>longitude</label>
-                        <input type="text" />
+                        <input type="text" onChange={(e) => {
+                            setData((prevData) => {
+                                return { ...prevData, longitude: e.target.value }
+                            })
+                        }} value={data.longitude} required />
                     </div>
 
                 </div>
                 <div className='btn'>
-                    <button>Previous</button>
+                    <button onClick={() => navigate("/generalinfo")}>Previous</button>
                     <button>Add Property</button>
                 </div>
             </form>
