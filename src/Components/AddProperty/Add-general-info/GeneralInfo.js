@@ -8,7 +8,7 @@ export default function GeneralInfo() {
         name: "",
         mobile: "",
         postedBy: "",
-        saleType: "",
+        saleType: "", 
         featuredpkg: "",
         PPDpkg: "",
         image: null

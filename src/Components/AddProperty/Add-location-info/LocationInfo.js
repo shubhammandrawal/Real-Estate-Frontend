@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import './LocationInfo.css';
 import { useState } from 'react';
+import Sidebar from '../../SideBar/SideBar';
+import Header from '../../Header/Header';
 
 export default function LocationInfo() {
 
@@ -22,6 +24,8 @@ export default function LocationInfo() {
     }
 
     return <>
+    <Sidebar/>
+    <Header/>
         <h3>ADD NEW PROPERTY</h3>
         <div className='property-navbar'>
             <ol>

@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import './BasicInfo.css';
 import { useState } from 'react';
+import SideBar from '../../SideBar/SideBar';
+import Header from '../../Header/Header';
 
 export default function BasicInfo() {
 
@@ -36,6 +38,10 @@ export default function BasicInfo() {
     }
 
     return <>
+    
+    <SideBar/>
+    
+    <div className='basic-container'>
         <h3>ADD NEW PROPERTY</h3>
         <div className='property-navbar'>
             <ol>
@@ -161,5 +167,6 @@ export default function BasicInfo() {
                 </div>
             </form>
         </div>
+    </div>
     </>
 }

@@ -1,5 +1,9 @@
 body{
-    background-color: #FAFBFC;
+    display: flex;
+    /* flex-direction: column; */
+}
+.basic-container{
+    width: 1200px;
 }
 
 h3{
@@ -19,7 +23,7 @@ h3{
     justify-content: space-between;
     border-radius: 25px;
     align-items: center;
-    margin: auto;
+    margin-left: 320px;
     margin-bottom: 15px;
     background-color: #FFFFFF;
 }
