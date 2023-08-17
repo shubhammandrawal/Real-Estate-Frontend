@@ -76,7 +76,7 @@ const Update = () => {
     <div className='container-fluid'>
       <div className='row flex-nowrap'>
         <SideBar />
-        <div className='col container' style={{ maxWidth: "80%" }}>
+        <div className='col container' style={{ maxWidth: "80%" , marginLeft: "300px"}}>
           <Navbar />
           <h4 style={{ color: "#7D7D7D", textAlign: "start" }}>UPDATE PROPERTY</h4>
           <div

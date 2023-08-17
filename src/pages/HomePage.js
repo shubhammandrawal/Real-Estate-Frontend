@@ -119,7 +119,7 @@ const HomePage = () => {
     <div className='container-fluid'>
       <div className='row flex-nowrap'>
         <SideBar />
-        <div className='col container' style={{ maxWidth: "100%",marginLeft:"16%" }}>
+        <div className='col container' style={{ maxWidth: "100%", marginLeft: "16%" }}>
           <Navbar />
 
           <div
@@ -135,7 +135,7 @@ const HomePage = () => {
                 maxWidth: "70%",
               }}
             >
-              <div className='input-group mb-3'>
+              <div style={{display: "flex"}}>
                 <input
                   value={searchId}
                   onChange={(e) => setSearchId(e.target.value)}
@@ -150,21 +150,21 @@ const HomePage = () => {
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
-                
-                  <span
+
+                <span
                   onClick={() => searchingById()}
-                    style={{
-                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                      cursor: "pointer",
-                      borderTopRightRadius: "25px",
-                      borderBottomRightRadius: "25px",
-                    }}
-                    className="input-group-text"
-                    id="basic-addon2"
-                  >
-                    <AiOutlineSearch />
-                  </span>
-                
+                  style={{
+                    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    cursor: "pointer",
+                    borderTopRightRadius: "25px",
+                    borderBottomRightRadius: "25px",
+                  }}
+                  className="input-group-text"
+                  id="basic-addon2"
+                >
+                  <AiOutlineSearch />
+                </span>
+
               </div>
             </div>
             <button
@@ -174,17 +174,24 @@ const HomePage = () => {
               style={{
                 fontSize: "larger",
                 display: "flex",
-                backgroundColor:"#6AB4F8",
+                backgroundColor: "#6AB4F8",
                 alignItems: "center",
                 boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.13)",
                 justifyContent: "center",
                 borderRadius: "35px",
-                border:"none",
-                cursor:"pointer"
+                border: "none",
+                cursor: "pointer"
               }}
             >
 
-              <span className="ms-1 d-none d-sm-inline">+ Add Property</span>
+              <span className="ms-1 d-none d-sm-inline"
+                style={{
+                  fontFamily: "sans-serif",
+                  color: "#fff",
+                  fontWeight: "600",
+                  fontSize: "14px",
+                  paddingRight: "5px"
+                }}>+ Add Property</span>
             </button>
           </div>
           {searchFlag ? (
@@ -196,12 +203,12 @@ const HomePage = () => {
                   marginTop: "15px",
                   justifyContent: "flex-end",
                   paddingRight: "35px",
-                  
+
                 }}
               >
                 <button
                   type='button'
-                  onClick={()=>clearData()}
+                  onClick={() => clearData()}
                   className="btn btn-info"
                   style={{
                     fontSize: "larger",
@@ -211,8 +218,8 @@ const HomePage = () => {
                     boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
                     justifyContent: "center",
                     borderRadius: "35px",
-                    backgroundColor:"#6AB4F8",
-                    border:"none",
+                    backgroundColor: "#6AB4F8",
+                    border: "none",
                   }}
                 >
                   <MdOutlineClear />
@@ -226,7 +233,7 @@ const HomePage = () => {
               <Table />
             </>
           )}
-          </div>
+        </div>
       </div>
     </div>
   );

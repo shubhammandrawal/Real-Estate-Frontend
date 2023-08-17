@@ -5,6 +5,7 @@ import { BsFillEyeFill } from "react-icons/bs";
 import { MdModeEditOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import Image from './Image';
+import "./Table.css"
 const Table = () => {
 
     let token = localStorage.getItem("token");
@@ -77,17 +78,8 @@ const Table = () => {
                 </>
             ) : (
                 <>
-                    <table
-                        className='table table-hover table-responsive-xl'
-                        style={{
-                            marginTop: "15px",
-                            border: "1px solid #dee2e6",
-                            padding: "10px",
-                            borderRadius: "5px",
-                            width:"95%"
-                        }}
-                    >
-                        <thead style={{ color: "#4C57B6" }}>
+                    <table className='table custom-table'>
+                        <thead>
                             <tr>
                                 <th scope="col">PPD ID</th>
                                 <th scope="col">Image</th>
@@ -100,63 +92,20 @@ const Table = () => {
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody style={{
-                            background: "#f0eded"                            
-                            }}>
+                        <tbody>
                             {data.map((d) => (
-                                <tr key={d.ppdId}  style={{textAlign: "center"}}>
+                                <tr key={d.ppdId}>
                                     <td>{d.ppdId}</td>
-                                    <td 
-                                        onClick={() => showImage(d)}
-                                        style={{
-                                            cursor: "pointer"
-                                            // textAlign: "center",
-                                            // verticalAlign: "middle",
-                                        }}
-                                    >
-                                        <BsImageFill />
-                                    </td>
+                                    <td onClick={() => showImage(d)}><BsImageFill /></td>
                                     <td>{d.property}</td>
                                     <td>{d.mobile}</td>
                                     <td>{d.area}</td>
                                     <td>{d.views}</td>
-                                    <td
-                                        onClick={() => update(d)}
-                                        style={{
-                                            textAlign: "center",
-                                            // verticalAlign: "middle",
-                                        }}
-                                    >
-                                        <button
-                                            style={{
-                                                backgroundColor: "#F5FAF5",
-                                                color: "#416899",
-                                                borderRadius: "5px",
-                                                border: "1px solid rgb(228 233 233)",
-                                                cursor: "pointer",
-                                            }}
-                                            className="soldbtn"
-                                        >
-                                            {d.status}
-                                        </button>
+                                    <td onClick={() => update(d)}>
+                                        <button className="soldbtn">{d.status}</button>
                                     </td>
-                                    <td
-                                        style={{
-                                            textAlign: "center",
-                                            verticalAlign: "middle",
-                                        }}
-                                    >
-                                        {d.daysLeft}
-                                    </td>
-                                    <td
-                                        style={{
-                                            display: "flex",
-                                            justifyContent: "space-evenly",
-                                            cursor: "pointer",
-                                            textAlign: "center",
-                                            verticalAlign: "middle",
-                                        }}
-                                    >
+                                    <td>{d.daysLeft}</td>
+                                    <td>
                                         <span
                                             onClick={() => {
                                                 navigate("/viewpage", { state: d });
