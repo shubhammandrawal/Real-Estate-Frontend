@@ -100,14 +100,16 @@ const Table = () => {
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody style={{
+                            background: "#f0eded"                            
+                            }}>
                             {data.map((d) => (
-                                <tr key={d.ppdId} style={{marginLeft:"10px"}}>
+                                <tr key={d.ppdId}  style={{textAlign: "center"}}>
                                     <td>{d.ppdId}</td>
-                                    <td
+                                    <td 
                                         onClick={() => showImage(d)}
                                         style={{
-                                            cursor: "pointer",
+                                            cursor: "pointer"
                                             // textAlign: "center",
                                             // verticalAlign: "middle",
                                         }}
