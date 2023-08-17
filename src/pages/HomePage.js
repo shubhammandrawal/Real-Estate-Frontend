@@ -134,38 +134,40 @@ const HomePage = () => {
               style={{
                 maxWidth: "70%",
               }}
-            >
-              <div style={{display: "flex"}}>
+            
+              <div style={{ display: "flex", alignItems: "center", padding: "10px"}}>
                 <input
                   value={searchId}
                   onChange={(e) => setSearchId(e.target.value)}
                   style={{
-                    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                    border: "none",
                     borderTopLeftRadius: "25px",
                     borderBottomLeftRadius: "25px",
+                    padding: "10px",
+                    outline: "none",
                   }}
                   type="text"
-                  className="form-control"
                   placeholder="Search by Id"
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
                 />
 
                 <span
                   onClick={() => searchingById()}
                   style={{
-                    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                    cursor: "pointer",
+                    background: "#f0f0f0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     borderTopRightRadius: "25px",
                     borderBottomRightRadius: "25px",
+                    cursor: "pointer",
+                    padding: "10px",
                   }}
-                  className="input-group-text"
-                  id="basic-addon2"
                 >
                   <AiOutlineSearch />
                 </span>
 
               </div>
+
             </div>
             <button
               type="button"
