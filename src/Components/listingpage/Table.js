@@ -5,6 +5,7 @@ import { BsFillEyeFill } from "react-icons/bs";
 import { MdModeEditOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import Image from './Image';
+import "./Table.css"
 const Table = () => {
 
     let token = localStorage.getItem("token");
@@ -77,103 +78,53 @@ const Table = () => {
                 </>
             ) : (
                 <>
-                    <table
-                        className='table table-hover table-responsive-xl'
-                        style={{
-                            marginTop: "15px",
-                            border: "1px solid #dee2e6",
-                            padding: "10px",
-                            borderRadius: "5px",
-                            width:"95%"
-                        }}
-                    >
-                        <thead style={{ color: "#4C57B6" }}>
-                            <tr>
-                                <th scope="col">PPD ID</th>
-                                <th scope="col">Image</th>
-                                <th scope="col">Property</th>
-                                <th scope="col">Contact</th>
-                                <th scope="col">Area</th>
-                                <th scope="col">Views</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Days Left</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.map((d) => (
-                                <tr key={d.ppdId} style={{marginLeft:"10px"}}>
-                                    <td>{d.ppdId}</td>
-                                    <td
-                                        onClick={() => showImage(d)}
-                                        style={{
-                                            cursor: "pointer",
-                                            // textAlign: "center",
-                                            // verticalAlign: "middle",
-                                        }}
-                                    >
-                                        <BsImageFill />
-                                    </td>
-                                    <td>{d.property}</td>
-                                    <td>{d.mobile}</td>
-                                    <td>{d.area}</td>
-                                    <td>{d.views}</td>
-                                    <td
-                                        onClick={() => update(d)}
-                                        style={{
-                                            textAlign: "center",
-                                            // verticalAlign: "middle",
-                                        }}
-                                    >
-                                        <button
-                                            style={{
-                                                backgroundColor: "#F5FAF5",
-                                                color: "#416899",
-                                                borderRadius: "5px",
-                                                border: "1px solid rgb(228 233 233)",
-                                                cursor: "pointer",
-                                            }}
-                                            className="soldbtn"
-                                        >
-                                            {d.status}
-                                        </button>
-                                    </td>
-                                    <td
-                                        style={{
-                                            textAlign: "center",
-                                            verticalAlign: "middle",
-                                        }}
-                                    >
-                                        {d.daysLeft}
-                                    </td>
-                                    <td
-                                        style={{
-                                            display: "flex",
-                                            justifyContent: "space-evenly",
-                                            cursor: "pointer",
-                                            textAlign: "center",
-                                            verticalAlign: "middle",
-                                        }}
-                                    >
-                                        <span
-                                            onClick={() => {
-                                                navigate("/viewpage", { state: d });
-                                            }}
-                                        >
-                                            <BsFillEyeFill />
-                                        </span>
-                                        <span
-                                            onClick={() => {
-                                                navigate("/update", { state: d });
-                                            }}
-                                        >
-                                            <MdModeEditOutline />
-                                        </span>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <table className='table custom-table'>
+  <thead>
+    <tr>
+      <th scope="col">PPD ID</th>
+      <th scope="col">Image</th>
+      <th scope="col">Property</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Area</th>
+      <th scope="col">Views</th>
+      <th scope="col">Status</th>
+      <th scope="col">Days Left</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {data.map((d) => (
+      <tr key={d.ppdId}>
+        <td>{d.ppdId}</td>
+        <td onClick={() => showImage(d)}><BsImageFill /></td>
+        <td>{d.property}</td>
+        <td>{d.mobile}</td>
+        <td>{d.area}</td>
+        <td>{d.views}</td>
+        <td onClick={() => update(d)}>
+          <button className="soldbtn">{d.status}</button>
+        </td>
+        <td>{d.daysLeft}</td>
+        <td>
+          <span
+            onClick={() => {
+              navigate("/viewpage", { state: d });
+            }}
+          >
+            <BsFillEyeFill />
+          </span>
+          <span
+            onClick={() => {
+              navigate("/update", { state: d });
+            }}
+          >
+            <MdModeEditOutline />
+          </span>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
 
                     {
                         pathFlag && (
