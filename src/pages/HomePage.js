@@ -102,7 +102,7 @@ const HomePage = () => {
     let userid = localStorage.getItem("email");
     // console.log(token, id);
     setSearchFlag(true);
-    let url = `http://localhost:4000/api/search/${searchId}`;//add url
+    let url = `https://realestatee.onrender.com/api/search/${searchId}`;//add url
     axios
       .get(url)
       .then((res) => {
@@ -174,7 +174,7 @@ const HomePage = () => {
               style={{
                 fontSize: "larger",
                 display: "flex",
-                backgroundColor: "#6AB4F8",
+                backgroundColor: "#d4ece8",
                 alignItems: "center",
                 boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.13)",
                 justifyContent: "center",

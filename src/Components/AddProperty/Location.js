@@ -29,7 +29,7 @@ function Location({
     let token = localStorage.getItem("token");
     let id = localStorage.getItem("userID");
 
-    let url = "http://localhost:4000/api/property/";//Add url
+    let url = "https://realestatee.onrender.com/api/property/";//Add url
 
     // console.log(formData);
     if (status === "add") {
