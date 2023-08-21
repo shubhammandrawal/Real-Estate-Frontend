@@ -16,7 +16,7 @@ const Search = ({ values }) => {
 
     axios
       .patch(
-        `http://localhost:4000/api/property/sold/${details._id}`,//add url
+        `https://realestatee.onrender.com/api/property/sold/${details._id}`,//add url
         data,
         {
           headers: {

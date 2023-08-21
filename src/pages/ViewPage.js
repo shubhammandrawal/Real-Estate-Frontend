@@ -33,6 +33,7 @@ function ViewPage() {
         </button>
       </div>
       <h1 style={{textAlign: "center"}}>Property and Owner Details</h1>
+
       <div
         style={{
           fontSize: "10px",
@@ -168,7 +169,9 @@ function ViewPage() {
         }}
         id="example"
       >
+
        <tbody>
+
           {(() => {
             switch (page) {
               case 1:
@@ -337,7 +340,7 @@ function ViewPage() {
           })()}
         </tbody>
       </table>
-      
+
     </div>
   );
 }

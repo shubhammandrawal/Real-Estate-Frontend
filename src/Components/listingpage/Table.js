@@ -22,7 +22,7 @@ const Table = () => {
         // console.log(path);
     }
 
-    let url = "http://localhost:4000/api/property/";//add url
+    let url = "https://realestatee.onrender.com/api/property/";//add url
     useEffect(() => {
         fetch(url, {
             method: "GET",
