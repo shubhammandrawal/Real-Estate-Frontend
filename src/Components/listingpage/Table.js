@@ -79,52 +79,52 @@ const Table = () => {
             ) : (
                 <>
                     <table className='table custom-table'>
-  <thead>
-    <tr>
-      <th scope="col">PPD ID</th>
-      <th scope="col">Image</th>
-      <th scope="col">Property</th>
-      <th scope="col">Contact</th>
-      <th scope="col">Area</th>
-      <th scope="col">Views</th>
-      <th scope="col">Status</th>
-      <th scope="col">Days Left</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {data.map((d) => (
-      <tr key={d.ppdId}>
-        <td>{d.ppdId}</td>
-        <td onClick={() => showImage(d)}><BsImageFill /></td>
-        <td>{d.property}</td>
-        <td>{d.mobile}</td>
-        <td>{d.area}</td>
-        <td>{d.views}</td>
-        <td onClick={() => update(d)}>
-          <button className="soldbtn">{d.status}</button>
-        </td>
-        <td>{d.daysLeft}</td>
-        <td>
-          <span
-            onClick={() => {
-              navigate("/viewpage", { state: d });
-            }}
-          >
-            <BsFillEyeFill />
-          </span>
-          <span
-            onClick={() => {
-              navigate("/update", { state: d });
-            }}
-          >
-            <MdModeEditOutline />
-          </span>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+                        <thead>
+                            <tr>
+                                <th scope="col">PPD ID</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Property</th>
+                                <th scope="col">Contact</th>
+                                <th scope="col">Area</th>
+                                <th scope="col">Views</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Days Left</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((d) => (
+                                <tr key={d.ppdId}>
+                                    <td>{d.ppdId}</td>
+                                    <td onClick={() => showImage(d)}><BsImageFill /></td>
+                                    <td>{d.property}</td>
+                                    <td>{d.mobile}</td>
+                                    <td>{d.area}</td>
+                                    <td>{d.views}</td>
+                                    <td onClick={() => update(d)}>
+                                        <button className="soldbtn">{d.status}</button>
+                                    </td>
+                                    <td>{d.daysLeft}</td>
+                                    <td>
+                                        <span
+                                            onClick={() => {
+                                                navigate("/viewpage", { state: d });
+                                            }}
+                                        >
+                                            <BsFillEyeFill />
+                                        </span>
+                                        <span
+                                            onClick={() => {
+                                                navigate("/update", { state: d });
+                                            }}
+                                        >
+                                            <MdModeEditOutline />
+                                        </span>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
 
                     {
                         pathFlag && (

@@ -23,31 +23,32 @@ const Navbar = () => {
             <i className='fs-4 bi-house' >
               <div className='dropdown'>
                 <button
-                style={{background:"#6AB4F8"}}
+                // style={{background:"#6AB4F8"}}
                   type="button"
                   className="btn btn-info dropdown-toggle"
                   data-toggle="dropdown"
                 >
                   <FaUserAlt />
                   <span
-                    className=""
-                    style={{ marginTop: "5px", background:"#6AB4F8" }}
+                    // className=""
+                    // style={{ marginTop: "5px", background:"#6AB4F8" }}
                   >{name}</span>
 
                 </button>
                 <div
                   className="dropdown-menu"
-                  style={{
-                    backgroundColor: "#6AB4F8",
-                  }}
+                  // style={{
+                  //   backgroundColor: "#6AB4F8",
+                  // }}
                 >
                   
                   <a
+                    style={{ textDecoration: "none", marginLeft:"8px"}}  
                     className="dropdown-item"
                     onClick={() => localStorage.clear()}
                     href="/"
                   >
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout
+                    Logout
                   </a>
                 </div>
               </div>

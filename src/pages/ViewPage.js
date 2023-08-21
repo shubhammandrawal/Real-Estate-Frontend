@@ -32,7 +32,8 @@ function ViewPage() {
           <span className="ms-1 d-none d-sm-inline">Back</span>
         </button>
       </div>
-      <h1>Property and Owner Details</h1>
+      <h1 style={{textAlign: "center"}}>Property and Owner Details</h1>
+
       <div
         style={{
           fontSize: "10px",
@@ -158,18 +159,19 @@ function ViewPage() {
         </button>
       </div>
       <table
-        style={{ marginTop: "15px" }}
+        style={{ 
+          marginTop: "15px", 
+          width: "40%",
+          margin:"auto",
+          backgroundColor:"lightgray",
+          padding: "20px",
+          borderRadius: "15px"
+        }}
         id="example"
-        className="table   container table-info"
       >
-        <thead>
-          <tr>
-            <th colSpan="2">
-              {/* <h3>{heading}</h3> */}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
+
+       <tbody>
+
           {(() => {
             switch (page) {
               case 1:
@@ -338,6 +340,7 @@ function ViewPage() {
           })()}
         </tbody>
       </table>
+
     </div>
   );
 }

@@ -134,7 +134,7 @@ const HomePage = () => {
               style={{
                 maxWidth: "70%",
               }}
-            >
+            
               <div style={{ display: "flex", alignItems: "center", padding: "10px"}}>
                 <input
                   value={searchId}
@@ -149,6 +149,7 @@ const HomePage = () => {
                   type="text"
                   placeholder="Search by Id"
                 />
+
                 <span
                   onClick={() => searchingById()}
                   style={{
@@ -164,6 +165,7 @@ const HomePage = () => {
                 >
                   <AiOutlineSearch />
                 </span>
+
               </div>
 
             </div>
@@ -184,7 +186,14 @@ const HomePage = () => {
               }}
             >
 
-              <span className="ms-1 d-none d-sm-inline">+ Add Property</span>
+              <span className="ms-1 d-none d-sm-inline"
+                style={{
+                  fontFamily: "sans-serif",
+                  color: "#fff",
+                  fontWeight: "600",
+                  fontSize: "14px",
+                  paddingRight: "5px"
+                }}>+ Add Property</span>
             </button>
           </div>
           {searchFlag ? (
